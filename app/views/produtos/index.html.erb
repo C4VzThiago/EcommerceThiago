@@ -1,0 +1,35 @@
+<h1> E-COMMERCE DO THIAGO </h1>
+
+o site tem <%= @produtos.count %> produtos
+
+<br><br>
+
+<% @produtos.each do |produto| %>
+	<div class= "produto">
+		Nome do produto: <%= produto.titulo %>
+		<br>
+		Descrição: <%= produto.conteudo %>
+		<br>
+		Preço: <%= produto.preco %>
+		<br>
+		URL: <%= image_tag(produto.url)  %>
+		<br>
+		Ativo? <%= produto.ativo %>
+		<br>
+		<%= produto.beautiful_date %>
+		<%= produto.beautiful_time %>
+		<br>
+		<%= button_to "Vizualizar produto", produto_path(produto.id), method: :get %>
+
+		<%= button_to "Apagar produto", produto_path(produto.id), method: :delete %>
+
+		<br>
+		<br>
+
+	</div>
+
+<% end %>
+
+<br>
+<%= link_to("Criar um novo produto", new_produto_path) %>
+<br>

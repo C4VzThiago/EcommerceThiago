@@ -1,0 +1,19 @@
+<%= form_for :produto, url: produtos_path do |f| %>
+	
+	Nome do produto: <%= f.text_field :titulo %>
+	<br>
+	Descrição: <%= f.text_field :conteudo %>
+	<br>
+	Preço: <%= f.number_field :preco %>
+	<br>
+	URL: <%= f.text_field :url %>
+	<br>
+	Ativo? <%= f.check_box :ativo %>
+	<br>
+	<br>
+	<br>
+
+	<%= f.submit "Criar" %>
+	
+
+<% end %>
